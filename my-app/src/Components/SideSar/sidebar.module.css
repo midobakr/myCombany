@@ -1,0 +1,14 @@
+.container{
+    background-color: chartreuse;
+    flex: 0 0 20%;
+    padding-top: 1em;
+    
+}
+ul{
+    margin: 0;
+}
+
+.sidebar_list{
+    list-style: none;
+    padding: 0;
+}

@@ -1,0 +1,14 @@
+.sidebar_item{
+    
+    border: 1px solid black;
+    background-color: blue;
+}
+
+.Link{
+    display: block;
+    padding: 1rem;
+    box-sizing: border-box;
+    
+    width: 100%;
+    height: 100%;
+}

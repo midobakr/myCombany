@@ -1,0 +1,15 @@
+.container {
+    flex: 0 0 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+.box{
+    display: flex;
+}
+.label{
+    color: blue;
+}

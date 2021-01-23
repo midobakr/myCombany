@@ -1,0 +1,18 @@
+html{
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  padding-top: 30px;
+  background-color: aqua;
+}
+#root{
+  height: 100%;
+}
+a{
+  text-decoration: none;
+ color: black;
+ display: block; 
+}

@@ -1,0 +1,30 @@
+.container{
+    width: 40%;
+    border: 5px solid gray;
+    border-radius: 15px;
+    margin: auto;
+    padding: 10px ;
+}
+.title{
+    margin: 1rem;
+    text-align: center;
+}
+.input{
+    display: block;
+    width: 100%;
+    padding: 5px;
+    font-size: 1em;
+    margin: auto;
+    margin-top: .5em;
+    border: 2px solid grey;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* background-color: rgb(187, 22, 22); */
+ 
+}
+.input:focus{
+    outline: none;
+}
+.formgroup{
+    margin: .5em 0 ;
+}
