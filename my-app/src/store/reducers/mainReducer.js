@@ -9,7 +9,10 @@ let initialState ={
     Attendance :null,
     history :[],
     conversation:{},
-    notification :[]
+    notification :[],
+
+    allUsers : [],
+    myUserInfo :''
 }
 
 function reducer(state = initialState , action) {
@@ -54,6 +57,13 @@ function reducer(state = initialState , action) {
     
         case Actions.SET_NOTIFICATION:
             return {...state , notification: action.payload ,backdrop:false , loading:false}
+    
+    
+        case Actions.SET_ALL_USERS:
+            return {...state , allUsers: action.payload ,backdrop:false , loading:false}
+    
+        case Actions.SET_MY_USER:
+            return {...state , myUserInfo: action.payload ,backdrop:false , loading:false}
     
     
         default:

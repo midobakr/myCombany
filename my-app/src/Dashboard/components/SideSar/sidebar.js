@@ -18,23 +18,20 @@ function Sidebar({username , avatar}) {
                 <SidebarItem name='Home' path='/' 
                 setActive ={set_activeItem} theActiveItem={activeItem}/>
             
-                <SidebarItem name='My Profile' path='/myprofile' 
+                <SidebarItem name='All employees' path='/dashboard/allEmployees' 
                 setActive ={set_activeItem} theActiveItem={activeItem}/>
             
-                <SidebarItem name='My History' path='/myhistory' 
+                <SidebarItem name='Registered employees' path='/dashboard/registeredUsers' 
                 setActive ={set_activeItem} theActiveItem={activeItem}/>
             
-                <SidebarItem name='Attendance registration' path='/Register' 
+                <SidebarItem name='Absent employees' path='/dashboard/AbsentEmployees' 
                 setActive ={set_activeItem} theActiveItem={activeItem}/>
             
-                <SidebarItem name='Leave' path='/leave' 
+                <SidebarItem name='recieved requests' path='/dashboard/recievedRequests' 
                 setActive ={set_activeItem} theActiveItem={activeItem}/>
             
             
-                <SidebarItem name='send' path='/send' 
-                setActive ={set_activeItem} theActiveItem={activeItem}/>
-            
-                <SidebarItem name='dashboard' path='/dashboard' 
+                <SidebarItem name='Send message' path='/dashboard/sendMessage' 
                 setActive ={set_activeItem} theActiveItem={activeItem}/>
             
             </ul>

@@ -7,37 +7,27 @@ import getAsync from "../../store/actions/getAsync";
 function Send({getConversation,sendConversation,conversation}) {
     const holder = useRef(null)
     const [message, setMessage]= useState('')
-    const [holder_height, setHolder]= useState(0)
 
-    let setmyholder = ()=>{
-        holder.current.scrollTop=200
-        console.log('gujdkml',holder.current.scrollTop)
-    }
     useEffect(()=>{
             getConversation()
-            // setTimeout(() => {
-            //     holder.current.scroll(0, holder.current.scrollHeight)          
-            // console.log('=====================>',holder.current.scrollHeight)
-
-            // }, 400);
-            // document.querySelector('#holder').scroll(0, 200)
     },[getConversation]) 
-    let send =()=>{
+    useEffect(()=>{
+        holder.current.scroll(0, holder.current.scrollHeight)  
+    })
+    let send =(e)=>{
        sendConversation({
             theMessage:message
         })
+        setMessage('')
+
     }
     let saveInput =(e)=>{
         setMessage(e.target.value)
-        console.log(message)
     }     
-    // console.log('===<<<<<<<<>>>>>>>>>>>',conversation.messages)
+
     return(
         <div className={classes.container}>
-            <div onLoad={()=>{
-                console.log('onload')
-                                holder.current.scroll(0, holder.current.scrollHeight)          
-            }} ref={holder} className={classes.holder}>
+            <div  ref={holder} className={classes.holder}>
                 {
                 conversation.messages?    
                 conversation.messages.map((conv)=>{
@@ -49,7 +39,7 @@ function Send({getConversation,sendConversation,conversation}) {
                     :'haha'
                 }
             </div>         
-            <textarea style={{width:'50%',margin:'0 auto',borderRadius:'15px',resize:'none'}} onChange={saveInput}>
+            <textarea value={message} style={{width:'50%',margin:'0 auto',borderRadius:'15px',resize:'none'}} onChange={saveInput}>
 
             </textarea>
             <button className={classes.button} onClick={send} >Send</button>

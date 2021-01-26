@@ -1,0 +1,17 @@
+.box{
+    display: flex;
+    margin-top: 10px;
+    background-color: tomato;
+    width: 90%;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 25px;
+}
+.dd{
+    flex: 0 0 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}

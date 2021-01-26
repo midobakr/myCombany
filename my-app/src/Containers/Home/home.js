@@ -1,7 +1,8 @@
-import  {Component} from "react";
+import  {Component , Fragment} from "react";
 import {Switch ,Route , Redirect} from "react-router-dom";
 import {connect} from "react-redux";
 
+import Dashboard from '../../Dashboard/containers/Home/home'
 import Register from "../../Components/register/register";
 import RegisterOut from "../../Components/logOut/logOut";
 import History from "../../Components/history/history";
@@ -20,11 +21,17 @@ class Home extends Component {
     }
     render(){
         return(
-            <div className={classes.container}>
+            <Fragment>
+                <Switch>
+
+                    <Route  path='/dashboard'>
+                        <Dashboard/>
+                    </Route>
+                <Route path='/'>
+                <div className={classes.container}>
                 <Nav/>
                 <div className = {classes.body}>
                 <SideBar username={this.props.user.name} avatar={this.props.user.avatar}/>
-                <Switch>
                     <Route exact path='/'>
                         <Notification notification={this.props.user.notification}/>
                     </Route>
@@ -43,11 +50,17 @@ class Home extends Component {
                     <Route  path='/send'>
                         <Send/>
                     </Route>
-                    <Route  path='/'><Redirect to='/' /></Route>
-                </Switch>
                 </div>
 
-            </div>)
+            </div>
+                    <Route  path='/'><Redirect to='/' /></Route>
+                    </Route>
+                    </Switch>
+
+            </Fragment>
+
+        )
+
     }
 
 }
