@@ -32,7 +32,7 @@ class  App extends Component {
     this.Components=[
                 <Route path='/login' render={props=><Login {...this.props}/>}></Route>
                 ,<Route path='/signup' render={props=><Signup {...this.props}/>}></Route>
-                ,<Route path='/'><Redirect to='/login'/></Route>
+                // ,<Route path='/'><Redirect to='/login'/></Route>
               ]
 
     }

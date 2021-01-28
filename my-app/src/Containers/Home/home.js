@@ -53,7 +53,7 @@ class Home extends Component {
                 </div>
 
             </div>
-                    <Route  path='/'><Redirect to='/' /></Route>
+                    {/* <Route  path='/'><Redirect to='/' /></Route> */}
                     </Route>
                     </Switch>
 

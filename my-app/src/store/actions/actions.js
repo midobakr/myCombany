@@ -11,6 +11,7 @@ const SET_NOTIFICATION= 'SET_NOTIFICATION'
 /////////////////
 const SET_ALL_USERS = 'SET_ALL_USERS';
 const SET_MY_USER = 'SET_MY_USER';
+const SET_REGISTEREDUSERS = 'SET_REGISTEREDUSERS';
 
 
 export {
@@ -26,7 +27,8 @@ export {
     SET_NOTIFICATION,
 
     SET_ALL_USERS,
-    SET_MY_USER
+    SET_MY_USER,
+    SET_REGISTEREDUSERS
 
     
 }

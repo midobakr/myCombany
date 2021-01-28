@@ -12,7 +12,8 @@ let initialState ={
     notification :[],
 
     allUsers : [],
-    myUserInfo :''
+    myUserInfo :'',
+    registeredUsers:[]
 }
 
 function reducer(state = initialState , action) {
@@ -64,6 +65,10 @@ function reducer(state = initialState , action) {
     
         case Actions.SET_MY_USER:
             return {...state , myUserInfo: action.payload ,backdrop:false , loading:false}
+    
+    
+        case Actions.SET_REGISTEREDUSERS:
+            return {...state , registeredUsers: action.payload ,backdrop:false , loading:false}
     
     
         default:

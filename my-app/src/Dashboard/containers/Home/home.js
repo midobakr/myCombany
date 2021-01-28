@@ -7,6 +7,7 @@ import Nav from "../../../Components/nav/nav";
 import getAsync from "../../../store/actions/getAsync";
 import AllUsers from "../../components/allUsers/allUsers";
 import GetUser from "../../components/getUser/getUser";
+import RegisterUsers from "../../components/registeredUsers/registeredUsers";
 import {SET_USER} from "../../../store/actions/actions";
 
 class Home extends Component {
@@ -30,7 +31,8 @@ class Home extends Component {
                     <Route  path='/dashboard/employee/:id'>
                         <GetUser/>
                     </Route>
-                    <Route  path='/Register'>
+                    <Route  path='/dashboard/registeredUsers'>
+                        <RegisterUsers/>
                     </Route>
                     <Route  path='/leave'>
                     </Route>

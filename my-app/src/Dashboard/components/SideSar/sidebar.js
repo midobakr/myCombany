@@ -5,7 +5,7 @@ import SidebarItem from "./sidebar_item/sidebarItem";
 
 function Sidebar({username , avatar}) {
     
-    let [activeItem ,set_activeItem] = useState('/') 
+    let [activeItem ,set_activeItem] = useState(window.location.pathname) 
     console.log('activeItem==>',activeItem)
     return (
         <div className={classes.container}>
