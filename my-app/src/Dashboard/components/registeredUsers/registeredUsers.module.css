@@ -1,14 +1,28 @@
 .container {
     flex: 0 0 80%;
-    display: flex;
-    flex-direction: column;
+    text-align: center;
+    padding-top: 50px;
 
 }
 
+.dateInput {
+    border: 1px solid black;
+    border-Radius: 5px;
+    height: 30px;
+    width: 250px;
+    box-sizing: border-box;
+    margin: 0 auto;
+   
+
+}
+.dateInput:focus{
+    outline: none;
+}
+
 .box {
-    display:flex;
-    justify-content:space-between;
+    display: flex;
+    justify-content: space-between;
     flex-direction: row-reverse;
-    margin-top:2em;
+    margin-top: 2em;
     padding: 0 15px;
 }
