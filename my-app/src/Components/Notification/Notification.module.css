@@ -3,8 +3,9 @@
     display: flex;
     flex-direction: column;
     padding: 1em;
-    box-sizing: border-box;
-
+    box-sizing: border-box;  
+    overflow:auto;
+    z-index: 5111;
 }
 .box{
     padding: 10px;

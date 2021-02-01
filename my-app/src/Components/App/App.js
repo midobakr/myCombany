@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Switch,Route , Redirect} from "react-router-dom";
+import {Switch,Route , Redirect, Link} from "react-router-dom";
 import {connect} from "react-redux";
 
 import Home from "../../Containers/Home/home";
@@ -32,7 +32,9 @@ class  App extends Component {
     this.Components=[
                 <Route path='/login' render={props=><Login {...this.props}/>}></Route>
                 ,<Route path='/signup' render={props=><Signup {...this.props}/>}></Route>
-                // ,<Route path='/'><Redirect to='/login'/></Route>
+                ,<Route path='/' >
+                  <Link to='/login'>Log in</Link>
+                </Route>
               ]
 
     }

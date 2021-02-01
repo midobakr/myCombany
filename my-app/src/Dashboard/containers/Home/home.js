@@ -3,11 +3,13 @@ import {Switch ,Route} from "react-router-dom";
 import {connect} from "react-redux";
 import classes from "./home.module.css";
 import SideBar from '../../components/SideSar/sidebar';
-import Nav from "../../../Components/nav/nav";
+import Nav from "../../../Components/nav/nav"; 
 import getAsync from "../../../store/actions/getAsync";
 import AllUsers from "../../components/allUsers/allUsers";
 import GetUser from "../../components/getUser/getUser";
 import RegisterUsers from "../../components/registeredUsers/registeredUsers";
+import UnRegisterUsers from "../../components/UnRegisterUsers/UnRegisterUsers";
+import MyInbox from "../../components/MyInbox/MyInbox";
 import {SET_USER} from "../../../store/actions/actions";
 
 class Home extends Component {
@@ -34,9 +36,11 @@ class Home extends Component {
                     <Route  path='/dashboard/registeredUsers'>
                         <RegisterUsers/>
                     </Route>
-                    <Route  path='/leave'>
+                    <Route  path='/dashboard/AbsentEmployees'>
+                    <UnRegisterUsers/>
                     </Route>
-                    <Route  path='/send'>
+                    <Route  path='/dashboard/recievedRequests'>
+                        <MyInbox/> 
                     </Route>
                     {/* <Route  path='/'><Redirect to='/' /></Route> */}
                 </Switch>

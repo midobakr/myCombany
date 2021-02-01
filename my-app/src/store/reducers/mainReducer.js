@@ -13,7 +13,8 @@ let initialState ={
 
     allUsers : [],
     myUserInfo :'',
-    registeredUsers:[]
+    registeredUsers:[],
+    myInbox :[]
 }
 
 function reducer(state = initialState , action) {
@@ -69,6 +70,11 @@ function reducer(state = initialState , action) {
     
         case Actions.SET_REGISTEREDUSERS:
             return {...state , registeredUsers: action.payload ,backdrop:false , loading:false}
+    
+    
+    
+        case Actions.SET_MYINBOX:
+            return {...state , myInbox: action.payload ,backdrop:false , loading:false}
     
     
         default:

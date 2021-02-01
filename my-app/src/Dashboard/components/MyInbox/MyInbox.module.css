@@ -1,0 +1,6 @@
+.container {
+    flex: 0 0 80%;
+    text-align: center;
+    padding-top: 50px;
+    overflow: auto;
+}

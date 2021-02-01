@@ -5,7 +5,8 @@ body {
   height: 100%;
   margin: 0;
   box-sizing: border-box;
-  padding-top: 30px;
+  padding-top: 39px;
+  overflow: hidden;
   background-color: aqua;
 }
 #root{
