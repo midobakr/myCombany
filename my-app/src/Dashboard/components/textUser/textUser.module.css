@@ -1,14 +1,3 @@
-.container {
-    padding: 10px;
-    padding-top: 30px;
-    box-sizing: border-box;
-    flex: 0 0 80%;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    align-items: center;
-    justify-content: space-between;
-}
 p{
     margin: 5px;
 }
@@ -22,7 +11,7 @@ p{
     border-radius: 15px;
     margin: 5px;
     padding: 0 15px;
-
+    margin-left: auto;
 }
 .date{
     align-self: flex-end;
@@ -34,13 +23,13 @@ textarea{
 }
 .button{
     margin: 0 auto;
-    width: 50%;
+    width: 25%;
 
 }
 .holder{
     flex: 0 0 50%;
-    width: 100%;
-    overflow-y: auto;
+    height:250px;
+    overflow-y: scroll;
     border: 3px solid red;
     border-radius: 5px;
 }

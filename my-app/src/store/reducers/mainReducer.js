@@ -14,7 +14,8 @@ let initialState ={
     allUsers : [],
     myUserInfo :'',
     registeredUsers:[],
-    myInbox :[]
+    myInbox :[],
+    myChat :''
 }
 
 function reducer(state = initialState , action) {
@@ -75,6 +76,10 @@ function reducer(state = initialState , action) {
     
         case Actions.SET_MYINBOX:
             return {...state , myInbox: action.payload ,backdrop:false , loading:false}
+    
+    
+        case Actions.SET_MYCHAT:
+            return {...state , myChat: action.payload ,backdrop:false , loading:false}
     
     
         default:

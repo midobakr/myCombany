@@ -2,9 +2,11 @@ import * as Actions from "./actions";
 
 
  const getAsync = (path ,Actiontype) => async (dispatch, getState) => {
+    console.log('i am here ==>' , getState().token)
     dispatch({
         type: Actions.GET_DATA
     })
+
             console.log('state' , getState())
     try {
         let Response = await fetch('http://192.168.1.6:3333'+ path, {
