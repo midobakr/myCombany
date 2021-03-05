@@ -1,7 +1,9 @@
 import * as Actions from  '../actions/actions';
+import {sendSubscription , deleteSubscription} from '../../subscription';
 
 let initialState ={
     user :{},
+    logIn : false,
     token :'',
     backdrop :false,
     loading :false,
@@ -20,9 +22,19 @@ let initialState ={
 
 function reducer(state = initialState , action) {
     switch (action.type) {
+        case Actions.LOG_IN:
+                    localStorage.setItem('token' , action.payload);
+                    sendSubscription()    
+                return {...state , token: action.payload}
+            
         case Actions.SET_TOKEN:
-                    localStorage.setItem('token' , action.payload); 
+                    localStorage.setItem('token' , action.payload);
             return {...state , token: action.payload}
+
+        case Actions.REMOVE_TOKEN:
+                    deleteSubscription();           
+                    // window.location.pathname = '/';
+                return {...state , token: '' ,   user:{}}
     
         case Actions.GET_DATA:
             return {...state , backdrop:true , loading:true,errors :''}

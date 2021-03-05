@@ -1,4 +1,6 @@
 const SET_TOKEN = 'SET_TOKEN';
+const LOG_IN = 'LOG_IN';
+const REMOVE_TOKEN = 'REMOVE_TOKEN';
 const GET_DATA = 'GET_DATA';
 const SET_USER = 'SET_USER';
 const SET_ATTENDANCE = 'SET_ATTENDANCE';
@@ -18,6 +20,8 @@ const SET_MYCHAT = 'SET_MYCHAT';
 
 export {
     SET_TOKEN,
+    LOG_IN,
+    REMOVE_TOKEN,
     SET_USER,
     SHOW_BACKDROP,
     HIDE_BACKDROP,

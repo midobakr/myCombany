@@ -1,6 +1,8 @@
 import  {Component , Fragment} from "react";
-import {Switch ,Route , Redirect} from "react-router-dom";
+import {Switch ,Route } from "react-router-dom";
 import {connect} from "react-redux";
+
+// import {sendSubscription} from '../../subscription';
 
 import Dashboard from '../../Dashboard/containers/Home/home'
 import Register from "../../Components/register/register";
@@ -17,7 +19,14 @@ import {SET_USER} from "../../store/actions/actions";
 class Home extends Component {
     componentDidMount(){
         this.props.dispatch(getAsync('/user/me' ,SET_USER))
-
+            // if ('serviceWorker' in navigator) { 
+            //     navigator.serviceWorker.register('/serverWorker.js', {
+            //     scope: '/',
+            //     }).then(()=>{
+            //     sendSubscription()  
+            //     console.log('working every timeeeeeeeeeeeeeeee')});
+            // }
+                
     }
     render(){
         return(

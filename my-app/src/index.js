@@ -6,17 +6,22 @@ import {Provider} from 'react-redux';
 import thunk from "redux-thunk";
 import mainReducer from './store/reducers/mainReducer'
 import App from './Components/App/App';
+import ErrorBoundary from './Containers/errorBoundry/errorBoundry';
 import './index.css';
 
 const store = createStore(mainReducer , applyMiddleware(thunk))
 
 ReactDOM.render(
 <React.StrictMode>
+<ErrorBoundary>
+
     <Provider store={store}>
       <BrowserRouter> 
         <App/>    
       </BrowserRouter>
     </Provider>
+    </ErrorBoundary> 
+
 </React.StrictMode>,
   document.getElementById('root')
 );

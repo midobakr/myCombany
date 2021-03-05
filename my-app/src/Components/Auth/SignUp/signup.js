@@ -61,6 +61,7 @@ function SignUp(props) {
         return obj;
   }
   let saveInputData=(type, e)=>{
+    console.log(props)
     let value = e.target.value
     let new_errors = Object.assign(errors ,validate(type ,value))
     setErrors(new_errors)

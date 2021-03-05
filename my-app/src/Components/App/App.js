@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Switch,Route , Redirect, Link} from "react-router-dom";
+import {Switch,Route , Link} from "react-router-dom";
 import {connect} from "react-redux";
 
 import Home from "../../Containers/Home/home";
@@ -27,12 +27,12 @@ class  App extends Component {
   render(){
     
     if(this.props.token){
-        this.Components =[<Route  path='/'><Home/></Route>]
+        this.Components =[<Route ket={1}  path='/'><Home/></Route>]
     }else{
     this.Components=[
-                <Route path='/login' render={props=><Login {...this.props}/>}></Route>
-                ,<Route path='/signup' render={props=><Signup {...this.props}/>}></Route>
-                ,<Route path='/' >
+                <Route key={1} path='/' render={props=><Login {...props}/>}></Route>
+                ,<Route key={2} path='/signup' render={props=><Signup {...props}/>}></Route>
+                ,<Route key={3} path='/' >
                   <Link to='/login'>Log in</Link>
                 </Route>
               ]

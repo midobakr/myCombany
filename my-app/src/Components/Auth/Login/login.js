@@ -1,9 +1,10 @@
 import {useState} from "react";
 import validator from 'validator';
-import {Link} from "react-router-dom";
+import {Link } from "react-router-dom";
 import {connect} from "react-redux";
 import classes from './login.module.css';
 import Form from '../../UI/Form/form'
+import {LOG_IN} from '../../../store/actions/actions'
 import postAsync from '../../../store/actions/postAsync'
 function Login(props) {
   
@@ -13,7 +14,7 @@ function Login(props) {
 
   let validate=(type, value)=>{
     let obj={}
-      switch (type) {
+      switch (type) { 
           case 'email':
             if(!validator.isEmail(value)){
               obj.email ='invalid Email';
@@ -50,16 +51,11 @@ function Login(props) {
     e.preventDefault()
     let validForm =!Object.values(errors).join('')
     if(validForm){
-        const {email , password} = state
-          console.log('i am here',state , email ,password)
-          props.dispatch(postAsync('/login',{email : state.email ,password :state.password}))
-      }
+          props.dispatch(postAsync('/login',{email : state.email ,password :state.password},LOG_IN))
+        }
 
     }
   
-  
-  console.log('loggggggg in' , props)
-   
   return (
     <div className={classes.container}>
           <h1 style={{textAlign:'right' , margin:0,padding:'15px'}}>
@@ -92,5 +88,8 @@ function Login(props) {
     </div>
   );
 }
+const mapStateToProps = (state)=>({
+  token : state.token
+})
 
-export default connect(null)(Login);
+export default connect(mapStateToProps)(Login);

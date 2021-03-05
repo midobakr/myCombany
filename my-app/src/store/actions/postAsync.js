@@ -24,7 +24,6 @@ import * as Actions from "./actions";
                 payload: Data
             })
     
-    
         }else{
             Response = await Response.json()
             throw (Response)

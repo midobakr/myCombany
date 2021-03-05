@@ -13,8 +13,8 @@ function Notification({notification , dispatch}) {
 
         <div className={classes.container}>
             {notification?
-                notification.map(note=>
-                    <div className={classes.box}>
+                notification.map((note,index)=>
+                    <div key={index} className={classes.box}>
                         <span>{note.msg}</span>
                         <span>{new Date(note.date).toLocaleString()}</span>
                     </div>
