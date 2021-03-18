@@ -39,7 +39,7 @@ function Send({getConversation,sendConversation,myChat,myUser , myID}) {
                                 <p>{conv.content}</p>
                                 <p className={classes.date}>{new Date(conv.date).toLocaleString()}</p>
                             </div>)
-                    })
+                    }) 
                     :'Loading...'
                 }
             </div>         

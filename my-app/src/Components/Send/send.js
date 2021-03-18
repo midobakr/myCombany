@@ -4,7 +4,7 @@ import classes from './send.module.css'
 import {SET_CONVERSATION} from "../../store/actions/actions";
 import postAsync from "../../store/actions/postAsync";
 import getAsync from "../../store/actions/getAsync";
-function Send({getConversation,sendConversation,conversation}) {
+function Send({getConversation,sendConversation,conversation , myID}) {
     const holder = useRef(null)
     const [message, setMessage]= useState('')
 
@@ -31,11 +31,12 @@ function Send({getConversation,sendConversation,conversation}) {
                 {
                 conversation.messages?    
                 conversation.messages.map((conv)=>{
-                            return(<div className={classes.box}>
-                                <p>{conv.content}</p>
-                                <p className={classes.date}>{new Date(conv.date).toLocaleString()}</p>
-                            </div>)
-                    })
+                    return(<div className={classes.box} style={conv.from ===myID? {marginRight:'auto',marginLeft:0}:{}}>
+                        <p style={{paddingBottom:'5px' , borderBottom:'1px solid black'}}>{conv.name}</p>
+                        <p>{conv.content}</p>
+                        <p className={classes.date}>{new Date(conv.date).toLocaleString()}</p>
+                    </div>)
+            }) 
                     :'haha'
                 }
             </div>         
@@ -47,7 +48,9 @@ function Send({getConversation,sendConversation,conversation}) {
     )
 }
 const mapStateToprop =(state)=>({
-    conversation :state.conversation
+    conversation :state.conversation,
+    myID : state.user._id
+
 })
 const mapDispatchToprop =(dispatch)=>({
     sendConversation :(body)=>dispatch(postAsync('/conversation/send',body,SET_CONVERSATION)),
