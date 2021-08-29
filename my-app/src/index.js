@@ -4,25 +4,25 @@ import {BrowserRouter} from "react-router-dom";
 import {createStore , applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import thunk from "redux-thunk";
-import mainReducer from './store/reducers/mainReducer'
-import App from './Components/App/App';
-import ErrorBoundary from './Containers/errorBoundry/errorBoundry';
+import mainReducer from './App/store/reducers/mainReducer'
+import App from './App/App';
+import ErrorBoundary from './App/employee/Containers/errorBoundry/errorBoundry';
 import './index.css';
 
 const store = createStore(mainReducer , applyMiddleware(thunk))
 
 ReactDOM.render(
-<React.StrictMode>
-<ErrorBoundary>
-
-    <Provider store={store}>
-      <BrowserRouter> 
-        <App/>    
-      </BrowserRouter>
-    </Provider>
+  //<React.StrictMode> 
+    <ErrorBoundary>
+      <Provider store={store}>
+        <BrowserRouter> 
+          <App/>    
+        </BrowserRouter>
+      </Provider>
     </ErrorBoundary> 
 
-</React.StrictMode>,
+// </React.StrictMode> 
+,
   document.getElementById('root')
 );
 
